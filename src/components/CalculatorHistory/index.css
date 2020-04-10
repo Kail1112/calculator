@@ -1,0 +1,104 @@
+.calculator-history {
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 5;
+    transform: translateY(100%);
+    transition: transform .2s linear;
+}
+.calculator-history__background {
+    display: block;
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: transparent;
+    transition: background-color .2s linear
+}
+.calculator-history.show {
+    transform: translateY(0);
+}
+.calculator-history.show .calculator-history__background {
+    background-color: rgba(0, 0, 0, 0.5);
+}
+.calculator-history ul {
+    display: block;
+    width: 100%;
+    margin: 0;
+    padding: 10px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    -webkit-overflow-scrolling: touch;
+    overflow-scrolling: touch;
+    overflow-y: auto;
+    overflow-x: hidden;
+    background-color: #D7D7D7;
+    max-height: 75%
+}
+.calculator-history ul li {
+    display: block;
+    width: 100%;
+    list-style: none;
+    text-align: right;
+}
+.calculator-history ul li:not(:last-child) {
+    margin-bottom: 15px;
+}
+.calculator-history ul li time,
+.calculator-history ul li p,
+.calculator-history ul li h3 {
+    display: block;
+    width: 100%;
+    color: #000;
+    text-align: right;
+    word-break: break-all;
+}
+.calculator-history ul li time {
+    margin: 0;
+    font-size: 12px;
+    line-height: 1.25em;
+    opacity: 0.75;
+}
+.calculator-history ul li time:not(:last-child) {
+    margin-bottom: 0.7142857142857143em;
+}
+.calculator-history ul li p {
+    margin: 0;
+    font-size: 16px;
+    line-height: 1.25em;
+}
+.calculator-field p:not(:last-child) {
+    margin-bottom: 0.625em;
+}
+.calculator-history ul li h3 {
+    margin: 0;
+    font-size: 32px;
+    line-height: 1.25em;
+    font-weight: 700;
+}
+
+@media (min-width: 768px) {
+    .calculator-history {
+        left: auto;
+        width: 260px;
+        background-color: #D7D7D7;
+        transform: translate(100%, 0);
+    }
+    .calculator-history.show {
+        transform: translate(0, 0);
+    }
+    .calculator-history__background {
+        display: none;
+    }
+    .calculator-history ul {
+        max-height: 100%;
+        padding: 20px;
+    }
+}

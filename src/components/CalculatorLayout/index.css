@@ -1,0 +1,28 @@
+.calculator {
+    display: block;
+    width: 100%;
+    background-color: #E9E9E9;
+    position: relative;
+    left: 0;
+    top: 0;
+    overflow: hidden;
+}
+
+.calculator-btn__wrapper {
+    display: flex;
+    flex-flow: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: stretch;
+    padding: 2px;
+}
+
+@media (min-width: 768px) {
+    .calculator-btn__wrapper {
+        padding-right: 2px;
+        transition: padding-right .2s linear;
+    }
+    .calculator-btn__wrapper.show-history {
+        padding-right: 262px;
+    }
+}
